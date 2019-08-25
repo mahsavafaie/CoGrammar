@@ -9,17 +9,15 @@
   the answer is just text.replace(search, repl), no need for recursion."""
 
 def recursive(text, search, repl):
-     while search in text:
+    while search in text:
          before, text = text.split(search, 1)
          return before + repl + recursive(text, search, repl)
-     return text
+    return text
 
 def wrapper():
      string = input("Please enter a string: ")
-     substr = input("Please enter the substring you wish to find: ")
+     substr = input("Please enter the substring you wish to find here : ")
      replstr = input("Please enter a string to replace the given substring: ")
-     return "Your new string is: ", recursive(string, substr, replstr)
+     return recursive(string, substr, replstr)
 
-print(wrapper())
-
-
+print ("Your new string is " + wrapper())
